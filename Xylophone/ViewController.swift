@@ -20,6 +20,12 @@ class ViewController: UIViewController {
     @IBAction func keyPressed(_ sender: UIButton) {
         
         playSound(soundName: sender.currentTitle!)
+        sender.alpha = 0.5
+        
+        let timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { timer in
+            sender.alpha = 1.0
+        }
+        
     }
     
     func playSound(soundName: String) {
